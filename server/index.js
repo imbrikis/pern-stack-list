@@ -47,8 +47,30 @@ app.get('/todos/:id', async (req, res) => {
 })
 
 // update a todo
+app.put('/todos/:id', async (req, res) => {
+  try {
+    const { description } = req.body
+    const modifyTodo = await pool.query(
+      'UPDATE todo SET description = $1 WHERE todo_id = $2',
+      [description, req.params.id]
+    )
+    res.json('Todo was updated')
+  } catch (err) {
+    console.error(err)
+  }
+})
 
 // delete a todo
+app.delete('/todos/:id', async (req, res) => {
+  try {
+    const deleteTodo = await pool.query('DELETE FROM todo WHERE todo_id = $1', [
+      req.params.id,
+    ])
+    res.json('Todo was deleted')
+  } catch (err) {
+    console.error(err)
+  }
+})
 
 app.listen(5000, () => {
   console.log(`server has started on port 5000`)
