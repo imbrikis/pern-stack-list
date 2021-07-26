@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(230, 230, 230);
+  letter-spacing: 0.1rem;
+}
+
+body {
+  box-sizing: border-box;
+  background: black;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.app_container {
+  padding: 5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.new-todo-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.new-todo-input,
+.new-todo-submit {
+  height: 3.8rem;
+  border: none;
+}
+
+.new-todo-input {
+  width: 70%;
+  padding: 0 0.5rem;
+}
+
+.new-todo-submit {
+  width: 30%;
+  background-color: #c2f1c7;
+  transition: background-color 0.1s;
+  font-weight: bold;
+}
+
+.new-todo-submit:active {
+  background-color: #8fec98;
+}

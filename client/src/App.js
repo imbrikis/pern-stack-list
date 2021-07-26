@@ -1,17 +1,9 @@
 import React, { useState } from 'react'
+import InputTodo from './InputTodo'
 
 const App = () => {
   const [list, setList] = useState([])
   const [input, setInput] = useState('')
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setList([
-      ...list,
-      { id: Math.floor(Math.random() * 100000), content: input },
-    ])
-    setInput('')
-  }
 
   const handleDelete = (id) => {
     const tempList = list.filter((item) => item.id !== id)
@@ -33,18 +25,9 @@ const App = () => {
   })
 
   return (
-    <div>
-      <h1>The Best List in the World!!!</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Add Item:{' '}
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            type='text'
-          />
-        </label>
-      </form>
+    <div className='app_container'>
+      <h1>Super Awesome List</h1>
+      <InputTodo />
       <ul>{renderedList}</ul>
     </div>
   )
