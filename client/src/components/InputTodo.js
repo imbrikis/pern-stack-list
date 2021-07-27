@@ -1,14 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import TodoContext from '../context/TodoContext'
+import axios from 'axios'
 
 const InputTodo = () => {
   const [input, setInput] = useState('')
 
-  const handleSubmit = (e) => {
+  const todos = useContext(TodoContext)
+  console.log(todos)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // setList([
-    //   ...list,
-    //   { id: Math.floor(Math.random() * 100000), content: input },
-    // ])
+
+    try {
+      const res = await axios.post('http://localhost:5000/todos', {
+        description: input,
+      })
+      console.log(res)
+    } catch (err) {
+      console.error(err)
+    }
+
     setInput('')
   }
 

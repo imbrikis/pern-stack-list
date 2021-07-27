@@ -24,6 +24,8 @@ button {
 .app_container {
   padding: 5rem;
   text-align: center;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 h1 {
@@ -33,28 +35,52 @@ h1 {
 
 .new-todo-form {
   width: 100%;
+  max-width: 40rem;
   display: flex;
   align-items: center;
+  margin: 0 auto 2.5rem auto;
 }
 
 .new-todo-input,
 .new-todo-submit {
   height: 3.8rem;
   border: none;
+  font-size: 1.6rem;
 }
 
 .new-todo-input {
   width: 70%;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
+  letter-spacing: 0.1rem;
 }
 
 .new-todo-submit {
   width: 30%;
   background-color: #c2f1c7;
-  transition: background-color 0.1s;
   font-weight: bold;
+  color: black;
+}
+
+.new-todo-submit:hover {
+  cursor: pointer;
+  color: rgb(129, 129, 129);
+  transition: all 1s;
 }
 
 .new-todo-submit:active {
   background-color: #8fec98;
+  color: rgb(129, 129, 129);
+  transition: all 0.1s;
+}
+
+.hr {
+  border: 1px solid white;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 2.4rem;
+  }
 }
